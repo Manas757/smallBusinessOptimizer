@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.navbar-content {
+  max-width: 80rem; 
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem; 
+}
+
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; 
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.logo-box {
+  background-color: #48b046;
+  border-radius: 0.375rem;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #344054;
+}
+
+.nav-links {
+  display: none; 
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+  background-color: #cff7d1;
+}
+
+/* --- Center Section: Search Bar --- */
+.search-container-desktop {
+  display: none; /* Hidden on mobile */
+  flex: 1;
+  max-width: 32rem;
+  margin: 0 2rem;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem; /* Left padding for icon */
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.search-input:focus {
+  border-color: #14b8a6; /* Teal color */
+  box-shadow: 0 0 0 1px #14b8a6;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+/* --- Right Section: Icons --- */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Sign-in-btn{
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Sign-in-btn :hover{
+  color: #7cf581;
+}
+
+/* 1. Remove the default button box/border */
+.role-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 2. Resize the image to match the 24px size of your other icons */
+.user-profile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* Makes it a perfect circle */
+  object-fit: cover;
+}
+
+
+
+/* --- Mobile Search (Bottom) --- */
+.mobile-search-container {
+  padding: 0.75rem;
+  border-top: 1px solid #f3f4f6;
+  display: block;
+}
+
+/* --- Media Queries (Responsiveness) --- */
+@media (min-width: 768px) { /* Medium screens */
+  .nav-links { display: flex; }
+  .role-button { display: block; }
+}
+
+@media (min-width: 1024px) { /* Large screens */
+  .search-container-desktop { display: block; }
+  .mobile-search-container { display: none; }
+}
+
+
+
+
+
+
+
+
+
+/* Container styling */
+
+.content-container{
+    margin: 40px;
+}
+
+.promo-banner {
+  background: linear-gradient(90deg, #86efac 0%, #a7f3d0 100%); /* Light Green Gradient */
+  border-radius: 16px;
+  padding: 40px 50px;
+  position: relative;
+  overflow: hidden; /* Clips the tree image if it sticks out */
+  margin-top: 40px;
+  margin-bottom: 40px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Content wrapper to ensure text stays on top of image */
+.promo-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Heading */
+.promo-heading {
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Paragraph Text */
+.promo-text {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  max-width: 575px;
+  line-height: 1.5;
+}
+
+/* Button */
+.promo-button {
+  background-color: #22c55e; /* Strong Green */
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 25px;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+}
+
+.promo-button:hover {
+  background-color: #16a34a; /* Darker green on hover */
+}
+
+/* Background Tree Image */
+.promo-bg-image {
+  position: absolute;
+  right: -50px;
+  bottom: -20px;
+  height: 110%; /* Makes the tree tall */
+  width: auto;
+  opacity: 0.6;
+  z-index: 1; /* Sits behind text */
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+
+.products-container-text{
+    font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.product-grid {
+    display: grid;
+    /* Responsive Grid: min 300px width */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    background-color: #f4f2f2; /* Slightly lighter than bg */
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+    border: 1px solid #333;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #444;
+}
+
+.card-img {
+    height: 180px;
+    width: 100%;
+    /* Colors are handled inline in JSX */
+}
+
+.card-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #020202;
+    line-height: 1.4;
+}
+
+.store-name {
+    font-size: 0.8rem;
+    color: #0c0c0c;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+.price {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #050505;
+}
+
+.view-btn {
+    background-color: #ece3e3;
+    color: #070707;
+    border: 1px solid #444;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.view-btn:hover {
+    background-color: #444;
+    color: white;
+}
+
+
+
+
+
+
+
+/* Container for the whole section */
+.category-section {
+  background-color: #ffffff;
+  padding: 40px 0; /* Adjust vertical padding as needed */
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+}
+
+/* Heading Style */
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* The Grid Layout */
+.category-grid {
+  display: grid;
+  /* Creates 4 equal columns that stack on mobile */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Card Style */
+.category-card {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover Effect: Green Border & Shadow */
+.category-card:hover {
+  border-color: #05f90e;
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Icon Style */
+.cat-icon {
+  color: #2ecc71; /* The exact green from your image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text Style */
+.cat-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
