@@ -18,7 +18,6 @@ const CATEGORIES = [
 ];
 const Home = () => {
   const [currentPage, setCurrentPage] = useState('home');
-  const [role, setRole] = useState('customer');
 
   return (
   <div className='app-container'>
