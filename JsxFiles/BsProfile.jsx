@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import '../CSS/BsProfile.css'; // fixed filename
+import '../CSS/BsProfile.css'; 
 
 const SmallBizProfile = () => {
   const [searchTerm, setSearchTerm] = useState('');
-
+  const [currentPage, setCurrentPage] = useState('profile');
   const navigate = (section) => {
     alert(`Navigating to ${section} section`);
     // In a real app you might call a router: e.g. router.push(`/${section}`)
@@ -59,13 +59,13 @@ const SmallBizProfile = () => {
 
   return (
     <div className="app">
-      <header className="header">
+      {/* <header className="header">
         <div className="logo">
           <div className="logo-icon">SB</div>
           <span>SmallBiz Cart</span>
-        </div>
+        </div> */}
 
-        <nav className="nav">
+        {/* <nav className="nav">
           <a href="#market">Market</a>
           <a href="#genre">Genre</a>
           <a href="#reels">Reels</a>
@@ -83,19 +83,22 @@ const SmallBizProfile = () => {
           <div className="header-icons">
             <button type="button" className="icon-btn" aria-label="notifications">🔔</button>
             <button type="button" className="icon-btn" aria-label="cart">🛒</button>
-            <img src="https://via.placeholder.com/36" alt="Profile" className="profile-pic" />
+           <button className='role-btn' onClick={()=>setCurrentPage('profile')}>
+            <img
+              src="https://placehold.co/40x40/60A5FA/ffffff?text=U"
+              alt="User Profile"
+              className="user-profile"/>
+          </button>
           </div>
         </nav>
-      </header>
+      </header> */}
 
       <div className="container">
-        <div className="view-switch">
-          <a href="#business">Switch to Business Owner View</a>
-        </div>
+        <button className="analysis" onClick={()=>setCurrentPage('Analysis')}>Analyze</button>
 
         <div className="profile-section">
           <div className="profile-info">
-            <img src="https://via.placeholder.com/80" alt="Annie Buyer" className="profile-avatar" />
+            <img src="https://placehold.co/40x40/60A5FA/ffffff?text=A" alt="Annie Buyer" className="profile-avatar" />
             <div className="profile-details">
               <h2>Annie Buyer</h2>
               <div className="role">Buyer</div>
@@ -103,6 +106,7 @@ const SmallBizProfile = () => {
             </div>
           </div>
           <button type="button" className="edit-btn">Edit Profile</button>
+          <button type ="button" className='switch-btn' onClick={()=>setCurrentPage('Business')}>Business Profile</button>
         </div>
 
         <h3 className="section-title">Account Actions</h3>
@@ -157,6 +161,12 @@ const SmallBizProfile = () => {
           </table>
         </div>
       </div>
+{currentPage ==='Business'&& 
+  <Business/>
+}
+{currentPage ==='Analysis'&&
+  <Analysis/>
+}
     </div>
   );
 };

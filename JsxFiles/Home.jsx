@@ -4,6 +4,8 @@ import '../CSS/Home.css';
 import SearchResults from './SearchResults';
 import Categories from "./Categories"
 import SmallBizProfile from './BsProfile'
+import OrderCheckoutPage from './Cart'
+
 const PRODUCTS = [
   { id: 1, title: 'Handmade Lavender Soap', store: 'EcoCraft', price: '8.50', color: '#5c4033' },
   { id: 2, title: 'Ceramic Mug', store: 'Pottery Haven', price: '22.00', color: '#2f4f4f' },
@@ -52,7 +54,9 @@ const Home = () => {
         </div>
         <div className="nav-right">
           <button type="button" className="icon-btn" aria-label="notifications">🔔</button>
-          <button type="button" className="icon-btn" aria-label="cart">🛒</button>
+          <button className='role-btn' onClick={()=>setCurrentPage('Cart')} 
+          aria-label="cart">🛒
+          </button>
           <button className='Sign-in-btn'>
           <h4>Sign In</h4>
           </button>
@@ -146,6 +150,9 @@ const Home = () => {
         )}
     {currentPage === "Categories" && (
         <Categories/>
+    )}
+    {currentPage==='Cart'&&(
+      <OrderCheckoutPage/>
     )}
     {currentPage === "profile" && (
         <SmallBizProfile/>
