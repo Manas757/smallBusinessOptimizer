@@ -29,15 +29,29 @@ client.connect();
 //   }
 // );
 
+// client.query(
+//   `ALTER TABLE BsUsers 
+//    ADD username VARCHAR(20)`, 
+//   (err) => {
+//     if (err) {
+//       console.error("Error adding column:", err);
+//     } else {
+//       console.log("Column added successfully!");
+//     }
+//     client.end();
+//   }
+// );
+
 client.query(
-  `ALTER TABLE BsUsers 
-   ADD username VARCHAR(20)`, 
-  (err) => {
+  `ALTER TABLE BSUsers
+DROP COLUMN phone;`,
+  (err)=>{
     if (err) {
-      console.error("Error adding column:", err);
-    } else {
-      console.log("Column added successfully!");
+      console.error("ERRor Deleting",err);
+    }
+    else{
+      console.log("coloumn Deleted")
     }
     client.end();
-  }
-);
+    }
+)
