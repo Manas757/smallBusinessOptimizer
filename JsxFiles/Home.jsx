@@ -5,7 +5,8 @@ import SearchResults from './SearchResults';
 import Categories from "./Categories"
 import SmallBizProfile from './BsProfile'
 import OrderCheckoutPage from './Cart'
-import SignIn from './SignIn';
+import SignIn from './SignIn'
+
 
 const PRODUCTS = [
   { id: 1, title: 'Handmade Lavender Soap', store: 'EcoCraft', price: '8.50', color: '#5c4033' },

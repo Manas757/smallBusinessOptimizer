@@ -1,0 +1,105 @@
+/* General reset for the component */
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+} */
+
+.container-SignIn {
+  background-color: white;
+  width: 100%;
+  max-width: 450px; /* Limits the width to look like the card */
+  padding: 40px;
+  border: 1px solid #e5e7eb; /* Light grey border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Subtle shadow (optional) */
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #111827; /* Dark almost black */
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937; /* Dark grey */
+  margin-bottom: 8px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db; /* Grey border */
+  border-radius: 6px;
+  font-size: 16px;
+  color: #4b5563;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: #34d399; /* Green border on click */
+}
+
+.input-field::placeholder {
+  color: #6b7280; /* Placeholder grey */
+}
+
+.signIn-action {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.signIn-btn {
+  width: 100%;
+  background-color: #34d399; /* The specific bright green */
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.signIn-btn:hover {
+  background-color: #10b981; /* Slightly darker green on hover */
+}
+
+.business-signIn {
+  text-align: center;
+  font-size: 15px;
+  color: #4b5563;
+}
+
+.highlight-link {
+  color: #34d399; /* Matches button green */
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.highlight-link:hover {
+  text-decoration: underline;
+}

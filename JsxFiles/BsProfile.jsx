@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import '../CSS/BsProfile.css'; 
+import '../CSS/BsProfile.css';
+import AnalysisChart from './Analysis' 
 
 const SmallBizProfile = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState('profile');
   const navigate = (section) => {
     alert(`Navigating to ${section} section`);
-    // In a real app you might call a router: e.g. router.push(`/${section}`)
+  
   };
 
   const viewOrder = (orderId) => {
-    alert(`Viewing order details for ${orderId}`);
-    // Example: navigate(`/orders/${orderId}`);
+   
+   alert(`Viewing order details for ${orderId}`);
   };
+
 
   const handleSearch = (e) => {
     // use onKeyDown below (onKeyPress is deprecated in React)
@@ -92,11 +94,11 @@ const SmallBizProfile = () => {
           </div>
         </nav>
       </header> */}
+{currentPage !== "AnalysisChart"&&
+      (<div className="container">
+        <button className="analysis" onClick={()=>setCurrentPage('AnalysisChart')}>Analyze</button>
 
-      <div className="container">
-        <button className="analysis" onClick={()=>setCurrentPage('Analysis')}>Analyze</button>
-
-        <div className="profile-section">
+          <div className="profile-section">
           <div className="profile-info">
             <img src="https://placehold.co/40x40/60A5FA/ffffff?text=A" alt="Annie Buyer" className="profile-avatar" />
             <div className="profile-details">
@@ -113,12 +115,12 @@ const SmallBizProfile = () => {
         <div className="actions-grid">
           {actionCards.map((card, index) => (
             <div
-              key={index}
-              className="action-card"
-              role="button"
-              tabIndex={0}
-              onClick={() => navigate(card.section)}
-              onKeyDown={(e) => { if (e.key === 'Enter') navigate(card.section); }}
+            key={index}
+            className="action-card"
+            role="button"
+            tabIndex={0}
+            onClick={() => navigate(card.section)}
+            onKeyDown={(e) => { if (e.key === 'Enter') navigate(card.section); }}
             >
               <div className="action-icon">{card.icon}</div>
               <h3>{card.title}</h3>
@@ -141,11 +143,11 @@ const SmallBizProfile = () => {
             <tbody>
               {orders.map((order) => (
                 <tr
-                  key={order.id}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => viewOrder(order.id)}
-                  onKeyDown={(e) => { if (e.key === 'Enter') viewOrder(order.id); }}
+                key={order.id}
+                role="button"
+                tabIndex={0}
+                onClick={() => viewOrder(order.id)}
+                onKeyDown={(e) => { if (e.key === 'Enter') viewOrder(order.id); }}
                 >
                   <td>{order.id}</td>
                   <td>{order.date}</td>
@@ -160,12 +162,12 @@ const SmallBizProfile = () => {
             </tbody>
           </table>
         </div>
-      </div>
+      </div>)}
 {currentPage ==='Business'&& 
   <Business/>
 }
-{currentPage ==='Analysis'&&
-  <Analysis/>
+{currentPage ==='AnalysisChart'&&
+  <AnalysisChart/>
 }
     </div>
   );
