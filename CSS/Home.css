@@ -326,7 +326,7 @@
     color: #050505;
 }
 
-.view-btn {
+.home-view-btn {
     background-color: #ece3e3;
     color: #070707;
     border: 1px solid #444;
@@ -337,8 +337,8 @@
     transition: all 0.2s;
 }
 
-.view-btn:hover {
-    background-color: #444;
+.home-view-btn:hover {
+    background-color: #444444;
     color: white;
 }
 
@@ -407,4 +407,53 @@
   font-size: 0.95rem;
   font-weight: 600;
   color: #333;
+}
+
+.card {
+    width: 250px;
+    /* height: 250px;  <-- REMOVE OR COMMENT THIS OUT */
+    background-color: #f4f2f2;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+    border: 1px solid #333;
+    min-height: 320px; /* Use min-height instead to give it room to grow */
+}
+
+/* Ensure the image doesn't take up too much space */
+.card-img {
+    height: 150px; /* Reduced from 180px to make room for buttons */
+    width: 100%;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Fix the footer layout */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px; /* Add some space above the footer */
+    padding-top: 10px;
+}
+
+/* Ensure buttons are visible and side-by-side */
+.button-group {
+    display: flex;
+    gap: 5px;
+}
+
+.home-view-btn {
+    padding: 6px 10px; /* Slightly smaller padding to fit */
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap; /* Prevents text from wrapping */
 }

@@ -43,6 +43,28 @@ app.post('/addproducts', uplaod.single('image'), async (req, res) => {
         res.status(500).json({error:"failed to add prod"});
     }
 });
+app.get('/getproducts', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM BsProducts');
+        const products = result.rows.map(product => {
+            if (product.productimg) {
+                return {
+                    ...product,
+                    // Fixed typo: changed :base64 to ;base64
+                    productimg: `data:image/jpeg;base64,${product.productimg.toString("base64")}`
+                };
+            }
+            return product;
+        });
+
+        // CRITICAL: You must send the data back to the frontend!
+        res.json(products); 
+
+    } catch (err) {
+        console.error(err); 
+        res.status(500).json({ error: "Could not fetch products" });
+    }
+});
 
 app.listen(port, ()=>{
     console.log(`Server running on port ${port}`)
